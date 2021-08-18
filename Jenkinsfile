@@ -26,12 +26,12 @@ pipeline {
             environment {
                 ARTIFACT = sh (returnStdout: true, script: 
                 """
-                aws s3api list-buckets --query 'Buckets[].Name' | grep -wo "\\w*playgroundartifact\\w*" | cut -d" " -f2
+                aws s3api list-buckets --query 'Buckets[].Name' | grep -wo "\\w*playgroundartifact-fabrice\\w*" | cut -d" " -f2
                 """
                 ).trim()
                 TFSTATE = sh (returnStdout: true, script: 
                 """
-                aws s3api list-buckets --query 'Buckets[].Name' | grep -wo "\\w*playgroundtfstate\\w*" | cut -d" " -f2
+                aws s3api list-buckets --query 'Buckets[].Name' | grep -wo "\\w*playgroundtfstate-fabrice\\w*" | cut -d" " -f2
                 """
                 ).trim()
             }
